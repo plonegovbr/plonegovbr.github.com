@@ -2,17 +2,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introdução &mdash; plonegovbr.github.com - Last updated: Mar 05, 2012</title>
+    <title>Introdução &mdash; plonegovbr.github.com - Last updated: Apr 23, 2012</title>
+    
     <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     'Last updated: Mar 05, 2012',
+        VERSION:     'Last updated: Apr 23, 2012',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +26,10 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Pesquisar dentro de plonegovbr.github.com - Last updated: Mar 05, 2012"
+          title="Pesquisar dentro de plonegovbr.github.com - Last updated: Apr 23, 2012"
           href="_static/opensearch.xml"/>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
-    <link rel="top" title="plonegovbr.github.com - Last updated: Mar 05, 2012" href="#" />
+    <link rel="top" title="plonegovbr.github.com - Last updated: Apr 23, 2012" href="#" />
     <script src="_static/jquery.min.js" type="text/javascript"></script>
     <script src="_static/jquery.zrssfeed.min.js" type="text/javascript"></script>
 
@@ -38,7 +41,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Índice Geral"
              accesskey="I">índice</a></li>
-        <li><a href="#">plonegovbr.github.com - Last updated: Mar 05, 2012</a> &raquo;</li> 
+        <li><a href="#">plonegovbr.github.com - Last updated: Apr 23, 2012</a> &raquo;</li> 
       </ul>
     </div>
 
@@ -51,7 +54,7 @@
 <div id="searchbox" style="display: none">
   <h3>Pesquisa rápida</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Ir" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -132,6 +135,69 @@ arquivo de permissões e atualizar o
 repositórios.</p>
 <p>Times são representados por seções iniciadas com <tt class="docutils literal"><span class="pre">team:</span></tt> e repositórios
 são seções iniciadas com <tt class="docutils literal"><span class="pre">repo:</span></tt>.</p>
+<p>Toda a criação de repositório deve ser feita de acordo com os passos indicados
+a seguir.</p>
+<p><strong>POR FAVOR não utilize o botão de criar novo repositório da interface
+do Github, caso contrário a equipe que mantém esta organização terá que editar
+o aquivo permissions.cfg manualmente, o que pode causar uma grande demora na criação.</strong></p>
+</div>
+<div class="section" id="criando-um-novo-repositorio">
+<h2>Criando um novo repositório<a class="headerlink" href="#criando-um-novo-repositorio" title="Link permanente para este título">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Faça o login no github e acesse o repositório do Plonegovbr no
+endereço <a class="reference external" href="https://github.com/plonegovbr">https://github.com/plonegovbr</a>;</p>
+</li>
+<li><p class="first">Realize o fork do repositório plonegovbr.github.com;</p>
+</li>
+<li><p class="first">Em seu fork, edite o arquivo permissions.cfg. Adicione
+no final deste arquivo as linhas relativas a seu novo projeto
+no seguinte formato:</p>
+<div class="highlight-python"><pre>[repo:NOME_DO_NOVO_REPOSITORIO]
+teams = colaboradores
+owners = MEU_NOME_DE_USUARIO</pre>
+</div>
+</li>
+<li><p class="first">Realize o commit, push e inicie um pull request através da
+interface do Github.Quando o pull request for aceito, seu repositório
+será criado automaticamente, baseado nas configurações informadas.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="criando-um-fork-de-um-repositorio-existente-de-outro-usuario-ou-organizacao">
+<h2>Criando um fork de um repositório existente de outro usuário ou organização<a class="headerlink" href="#criando-um-fork-de-um-repositorio-existente-de-outro-usuario-ou-organizacao" title="Link permanente para este título">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Faça o login no github e acesse o repositório do Plonegovbr no
+endereço <a class="reference external" href="https://github.com/plonegovbr">https://github.com/plonegovbr</a>;</p>
+</li>
+<li><p class="first">Realize o fork do repositório plonegovbr.github.com;</p>
+</li>
+<li><p class="first">Em seu fork, edite o arquivo permissions.cfg. Adicione no final
+deste arquivo as linhas relativas a seu novo projeto no seguinte formato:</p>
+<div class="highlight-python"><pre>[repo:NOME_DO_REPOSITORIO]
+fork = DE_USUARIO_OU_ORGANIZACAO/NOME_DO_REPOSITORIO
+teams = colaboradores
+owners = MEU_NOME_DE_USUARIO</pre>
+</div>
+</li>
+<li><p class="first">Realize o commit, push e inicie um pull request através da interface do Github.
+Quando o pull request for aceito, o fork do repositório será criado automaticamente,
+baseado nas configurações informadas.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="adicionando-voce-ao-time-de-colaboradores-ou-qualquer-outro-time">
+<h2>Adicionando você ao time de colaboradores (ou qualquer outro time)<a class="headerlink" href="#adicionando-voce-ao-time-de-colaboradores-ou-qualquer-outro-time" title="Link permanente para este título">¶</a></h2>
+<p>1. Faça o login no github e acesse o repositório do Plonegovbr no
+endereço <a class="reference external" href="https://github.com/plonegovbr">https://github.com/plonegovbr</a>;
+2. Realize o fork do repositório plonegovbr.github.com;
+3. Em seu fork, edite o arquivo permissions.cfg. Localize a linha
+referente ao grupo colaboradores e adicione seu nome de usuário no final desta lista.</p>
+<div class="highlight-python"><pre>[team:colaboradores]
+members =</pre>
+</div>
+<p>4. Realize o commit, push e inicie um pull request através da interface do Github.
+Quando o pull request for aceito, você será adicionado ao grupo de colaboradores.
+As mesmas instruções acima são válidas para qualquer outro grupo, basta localiza-lo no arquivo.</p>
 </div>
 <div class="section" id="editando-o-arquivo-permissions-cfg">
 <h2>Editando o arquivo permissions.cfg<a class="headerlink" href="#editando-o-arquivo-permissions-cfg" title="Link permanente para este título">¶</a></h2>
@@ -140,28 +206,41 @@ são seções iniciadas com <tt class="docutils literal"><span class="pre">repo:
 <dd>O repositório foi migrado de outra ferramenta e você não está com a
 permissão corretamente aplicada aqui? Adicione seu nome de usuário ao
 item <tt class="docutils literal"><span class="pre">owners</span> <span class="pre">=</span></tt> da seção de seu repositório.</dd>
-<dt>Realizar o fork de um repositório existente de outro usuário ou organização</dt>
-<dd><p class="first">Adicione uma nova seção:</p>
-<div class="last highlight-python"><pre>[repo:NOME_DO_REPOSITORIO]
-fork = DE_USUARIO_OU_ORGANIZACAO/NOME_DO_REPOSITORIO
-teams = colaboradores
-owners = MEU_NOME_DE_USUARIO</pre>
-</div>
-</dd>
-<dt>Criar um novo repositório</dt>
-<dd><p class="first">Adicione uma nova seção:</p>
-<div class="last highlight-python"><pre>[repo:NOME_DO_NOVO_REPOSITORIO]
-teams = colaboradores
-owners = MY_NOME_DE_USUARIO</pre>
-</div>
-</dd>
-<dt>Adicionar você ao time de <tt class="docutils literal"><span class="pre">colaboradores</span></tt> (ou qualquer outro time)</dt>
-<dd>Vá até a seção <tt class="docutils literal"><span class="pre">[team:colaboradores]</span></tt> e adicione o seu nome ao final
-da lista.</dd>
 </dl>
-<p><strong>POR FAVOR não utilize o botão de criar novo repositório da interface do
-Github, caso contrário a equipe que mantém esta organização terá que
-editar o aquivo permissions.cfg manualmente</strong></p>
+</div>
+</div>
+<div class="section" id="trabalhando-com-repositorios-existentes">
+<h1>Trabalhando com repositórios existentes<a class="headerlink" href="#trabalhando-com-repositorios-existentes" title="Link permanente para este título">¶</a></h1>
+<p>Para trabalhar em um dos projetos existentes no repositório, você vai precisar
+criar uma cópia de trabalho deste repositório. Essa cópia de um repositório é
+chamada de Fork.</p>
+<div class="section" id="fazendo-o-fork-de-um-repositorio">
+<h2>Fazendo o fork de um repositório<a class="headerlink" href="#fazendo-o-fork-de-um-repositorio" title="Link permanente para este título">¶</a></h2>
+<ol class="arabic simple">
+<li>No Github, vá até a página do projeto que deseja realizar um Fork;</li>
+<li>Click no botão &#8216;Fork&#8217; que aparece no canto superior direito;</li>
+</ol>
+<p>Na sequencia, uma cópia do projeto será criado em sua conta do github.
+Veja no passo a seguir como trabalhar localmente em seu fork.</p>
+</div>
+<div class="section" id="trabalhando-localmente-em-um-fork">
+<h2>Trabalhando localmente em um fork<a class="headerlink" href="#trabalhando-localmente-em-um-fork" title="Link permanente para este título">¶</a></h2>
+<p>Você pode editar os arquivos de seu fork diretamente nas páginas do Github.
+Entretanto é muito mais fácil e produtivo trabalhar em uma cópia do projeto
+em seu computador. Fazer uma cópia do projeto é a operação conhecida como
+clonar. Para clonar o seu repositório, execute o código a seguir:</p>
+<div class="highlight-python"><pre>$ git clone git@github.com:username/nomedoseuprojeto.git</pre>
+</div>
+</div>
+<div class="section" id="configurando-seu-repositorio">
+<h2>Configurando seu repositório<a class="headerlink" href="#configurando-seu-repositorio" title="Link permanente para este título">¶</a></h2>
+<p>QUando um repositório é clonado , ele está diretamente associado ao seu fork
+no github, e não ao repositório que originou o fork. Para acompanhar as
+alterações feitas no repositório original, você precisa configurar o upstream:</p>
+<div class="highlight-python"><pre>$ cd nomedoseuprojeto
+$ git remote add upstream git://github.com/plonegovbr/nomedoseuprojeto.git
+$ git fetch upstream</pre>
+</div>
 </div>
 </div>
 
@@ -178,13 +257,13 @@ editar o aquivo permissions.cfg manualmente</strong></p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="Índice Geral"
              >índice</a></li>
-        <li><a href="#">plonegovbr.github.com - Last updated: Mar 05, 2012</a> &raquo;</li> 
+        <li><a href="#">plonegovbr.github.com - Last updated: Apr 23, 2012</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2012, PloneGovBr &lt;gov@plone.org.br&gt;.
-      Última atualização em Mar 05, 2012.
-      Criado com <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+      Última atualização em Apr 23, 2012.
+      Criado com <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>
