@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
   <ShortName>plonegovbr.github.com</ShortName>
-  <Description>Pesquisar em plonegovbr.github.com - Last updated: Mar 05, 2012</Description>
+  <Description>Pesquisar em plonegovbr.github.com - Last updated: Apr 23, 2012</Description>
   <InputEncoding>utf-8</InputEncoding>
   <Url type="text/html" method="get"
        template="http://collective.github.com/search.html?q={searchTerms}&amp;check_keywords=yes&amp;area=default"/>
-  <LongName>plonegovbr.github.com - Last updated: Mar 05, 2012</LongName>
+  <LongName>plonegovbr.github.com - Last updated: Apr 23, 2012</LongName>
   
 </OpenSearchDescription>

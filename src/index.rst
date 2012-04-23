@@ -38,6 +38,7 @@ Com sua conta criada, escolha uma das duas opções abaixo:
   ``permissions.cfg``, faça o commit, push e envie um Pull Request para nós
   (veja a seção abaixo para entender os detalhes).
 
+
 Como gerenciar permissões e repositórios
 ==========================================
 
@@ -74,38 +75,41 @@ Criando um novo repositório
 ----------------------------
 
 1. Faça o login no github e acesse o repositório do Plonegovbr no 
-endereço https://github.com/plonegovbr;    
+   endereço https://github.com/plonegovbr;    
 2. Realize o fork do repositório plonegovbr.github.com;    
 3. Em seu fork, edite o arquivo permissions.cfg. Adicione
-no final deste arquivo as linhas relativas a seu novo projeto 
-no seguinte formato:
+   no final deste arquivo as linhas relativas a seu novo projeto 
+   no seguinte formato:
+   ::
 
-    [repo:NOME_DO_NOVO_REPOSITORIO]
-    teams = colaboradores
-    owners = MEU_NOME_DE_USUARIO
+      [repo:NOME_DO_NOVO_REPOSITORIO]
+      teams = colaboradores
+      owners = MEU_NOME_DE_USUARIO
 
 4. Realize o commit, push e inicie um pull request através da 
-interface do Github.Quando o pull request for aceito, seu repositório
-será criado automaticamente, baseado nas configurações informadas.
+   interface do Github.Quando o pull request for aceito, seu repositório
+   será criado automaticamente, baseado nas configurações informadas.
 
 
 Criando um fork de um repositório existente de outro usuário ou organização
 -----------------------------------------------------------------------------
 
 1. Faça o login no github e acesse o repositório do Plonegovbr no 
-endereço https://github.com/plonegovbr;    
+   endereço https://github.com/plonegovbr;    
 2. Realize o fork do repositório plonegovbr.github.com;    
 3. Em seu fork, edite o arquivo permissions.cfg. Adicione no final
-deste arquivo as linhas relativas a seu novo projeto no seguinte formato:
+   deste arquivo as linhas relativas a seu novo projeto no seguinte formato:
+   ::
 
-    [repo:NOME_DO_REPOSITORIO]
-    fork = DE_USUARIO_OU_ORGANIZACAO/NOME_DO_REPOSITORIO
-    teams = colaboradores
-    owners = MEU_NOME_DE_USUARIO
+      [repo:NOME_DO_REPOSITORIO]
+      fork = DE_USUARIO_OU_ORGANIZACAO/NOME_DO_REPOSITORIO
+      teams = colaboradores
+      owners = MEU_NOME_DE_USUARIO
+
 
 4. Realize o commit, push e inicie um pull request através da interface do Github.    
-Quando o pull request for aceito, o fork do repositório será criado automaticamente,
-baseado nas configurações informadas.
+   Quando o pull request for aceito, o fork do repositório será criado automaticamente,
+   baseado nas configurações informadas.
 
 
 Adicionando você ao time de colaboradores (ou qualquer outro time)
@@ -115,6 +119,7 @@ endereço https://github.com/plonegovbr;
 2. Realize o fork do repositório plonegovbr.github.com;    
 3. Em seu fork, edite o arquivo permissions.cfg. Localize a linha
 referente ao grupo colaboradores e adicione seu nome de usuário no final desta lista.
+::
 
     [team:colaboradores]
     members =
@@ -130,7 +135,7 @@ Editando o arquivo permissions.cfg
 
 Repositório criado, mas você não é o dono (owner)
     O repositório foi migrado de outra ferramenta e você não está com a
-    permissão corretamente aplicada aqui? Adicione seu nome de usuário ao
+    permissão corretamente aplicada aqui ? Adicione seu nome de usuário ao
     item ``owners =`` da seção de seu repositório.
 
 
@@ -147,8 +152,10 @@ chamada de Fork.
 
 Fazendo o fork de um repositório
 -----------------------------------
+
 1. No Github, vá até a página do projeto que deseja realizar um Fork;
 2. Click no botão 'Fork' que aparece no canto superior direito;
+
 Na sequencia, uma cópia do projeto será criado em sua conta do github.
 Veja no passo a seguir como trabalhar localmente em seu fork.
 
@@ -158,15 +165,18 @@ Você pode editar os arquivos de seu fork diretamente nas páginas do Github.
 Entretanto é muito mais fácil e produtivo trabalhar em uma cópia do projeto
 em seu computador. Fazer uma cópia do projeto é a operação conhecida como
 clonar. Para clonar o seu repositório, execute o código a seguir:
+::
 
     $ git clone git@github.com:username/nomedoseuprojeto.git
+
 
 Configurando seu repositório
 -----------------------------
 QUando um repositório é clonado , ele está diretamente associado ao seu fork
 no github, e não ao repositório que originou o fork. Para acompanhar as 
 alterações feitas no repositório original, você precisa configurar o upstream:
- 
+::
+
     $ cd nomedoseuprojeto
     $ git remote add upstream git://github.com/plonegovbr/nomedoseuprojeto.git
     $ git fetch upstream
